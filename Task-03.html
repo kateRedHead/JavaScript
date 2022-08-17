@@ -27,24 +27,13 @@
     </button>
 
     <script>
-        /*
-        Задание:
-        Перепишите сценарий. Сделайте так, чтобы сортировка элементов в #list происходила при нажатии
-        на кнопку (кнопку нужно добавить), а не при загрузке страницы
-        */
+        
         let list = document.querySelector("#list");
         let btn = document.querySelector("#myBtn");
 
     
-        let items = document.querySelectorAll("li"); // получаем объект NodeList (это не массив)
-        let itemsArray = Array.from(items); // на основе NodeList создаем массив
-        
-        // выполняем сортировку с помощью стандартного метода массива
-        // так как сортируются узлы DOM нужно определить критерии, по которым узлы будут сравниваться
-        // функция, указанная в параметре метода sort определяет логику сравнения двух элементов в массиве. Она должна возвращать значение:
-        // если a < b возвращать значение меньше 0
-        // если a > b возвращать значение больше 0
-        // если a == b возвращать 0
+        let items = document.querySelectorAll("li"); 
+        let itemsArray = Array.from(items); 
 
         btn.addEventListener("click", function () {
         itemsArray.sort(function (a, b) {
@@ -61,20 +50,7 @@
         });
     });
 
-        console.log(itemsArray);
-
-
-
-
-/* function text () {
-    let newArray = []
-    itemsArray.innerText = newArray
-} */
-
-
-    
-        
-        
+        console.log(itemsArray);      
 
     </script>
 </body>
