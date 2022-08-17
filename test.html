@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task3</title>
+</head>
+
+<body>
+    <input type="button" value="Start the Game" id="btn">
+    <!-- Questionnaire -->
+    <script>
+
+let btn = document.querySelector("#btn");
+
+btn.addEventListener("click", startTheGame);
+
+        function startTheGame () {
+            const questions = [
+                {
+                    question: "Which programming language is not strongly typed?",
+                    correctAnswer: "a",
+                    sum: 5000,
+                    answers: [
+                        { answer: "a) JavaScript" },
+                        { answer: "b) C++" },
+                        { answer: "c) Java" },
+                        { answer: "d) C#" }
+                    ]
+                }, {
+                    question: "Which variable cannot be changed?",
+                    correctAnswer: "b",
+                    sum: 5000,
+                    answers: [
+                        { answer: "a) var a" },
+                        { answer: "b) const b" },
+                        { answer: "c) let c" },
+                        { answer: "d) d" }
+                    ]
+                },
+                {
+                    question: "Which variable will increase by one?",
+                    correctAnswer: "b",
+                    sum: 5000,
+                    answers: [
+                        { answer: "a) --i " },
+                        { answer: "b) i++ " },
+                        { answer: "c) i+ " },
+                        { answer: "d) -i " }
+                    ]
+                }];
+
+            //declare and initialize variable to zero
+            let totalSum = 0;
+            let winner = true;
+
+            //loop through all questions 
+            for (let index = 0; index < questions.length; index++) {
+                //select question from an array 
+                const q = questions[index];
+                //prompt the user with the questions
+                const a = prompt(`${q.question} \n ` + q.answers.map(e => e.answer).join("\n"));
+                // variable a contains user's reply, so that' what we check 
+
+                //if correct then increment total sum 
+                if (a == q.correctAnswer) {
+                    totalSum += q.sum;
+                    //carry on
+                } else {
+                    //terminate loop if the answer is incorrect                    
+                    winner = false;
+                    break;
+                }
+            }
+
+            //congratulate the winner 
+            if (winner) {
+                alert('Congrats! You are a millionaire! 🥳');
+            } else {
+                alert('Bad luck! Maybe next time 😭');
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

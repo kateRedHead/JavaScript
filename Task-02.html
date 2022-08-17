@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 05</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #generateButton {
+            height: 5vh;
+            background-color: green;
+            color: white;
+            cursor: pointer;
+            text-align: center;
+            font-size: 24px;
+
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+        }
+
+        #interactivePanel {
+            position: relative;
+            height: 95vh;
+        }
+
+        .interactiveElement {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="generateButton">Generate</div>
+    <div id="interactivePanel"></div>
+    <script>
+        
+        function generateElement() {
+            let div = document.createElement("div");
+            div.classList.add("interactiveElement");
+            let maxLeft = window.innerWidth - 50; // current document's widht
+            let maxTop = window.innerHeight - 150; //  current document's height
+            div.style.top = getRandomValue(maxTop) + "px";
+            div.style.left = getRandomValue(maxLeft) + "px";
+            div.style.backgroundColor = getRandomColor();
+            return div;
+        }
+
+        // return random color
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[getRandomValue(16)];
+            }
+            return color;
+        }
+
+        // return random number from 0 to max
+        function getRandomValue(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+        function newElementArray () {
+            let interPanelElem = document.querySelector("#interactivePanel");
+            interPanelElem.innerHTML = '';
+            for (let i = 0; i < 100; i++) {
+                let div = generateElement();
+               interPanelElem.append(div);
+            }
+        }
+
+
+        let btnGenerate = document.querySelector("#generateButton");
+        btnGenerate.addEventListener("click", newElementArray);
+
+    </script>
+</body>
+
+</html>

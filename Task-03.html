@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 04</title>
+</head>
+
+<body>
+    <ul id="list">
+        <li>Watermelon</li> 
+        <li>Pear</li>   
+        <li>Orange</li>
+        <li>Plump</li>
+        <li>Watermelon</li>
+        <li>Apple</li>
+        <li>Pineapple</li>
+        <li>Tangerine</li>
+        <li>Melon</li>
+        <li>Peach</li>
+    </ul>
+
+    <button id = "myBtn">
+        Click me
+    </button>
+
+    <script>
+        /*
+        Задание:
+        Перепишите сценарий. Сделайте так, чтобы сортировка элементов в #list происходила при нажатии
+        на кнопку (кнопку нужно добавить), а не при загрузке страницы
+        */
+        let list = document.querySelector("#list");
+        let btn = document.querySelector("#myBtn");
+
+    
+        let items = document.querySelectorAll("li"); // получаем объект NodeList (это не массив)
+        let itemsArray = Array.from(items); // на основе NodeList создаем массив
+        
+        // выполняем сортировку с помощью стандартного метода массива
+        // так как сортируются узлы DOM нужно определить критерии, по которым узлы будут сравниваться
+        // функция, указанная в параметре метода sort определяет логику сравнения двух элементов в массиве. Она должна возвращать значение:
+        // если a < b возвращать значение меньше 0
+        // если a > b возвращать значение больше 0
+        // если a == b возвращать 0
+
+        btn.addEventListener("click", function () {
+        itemsArray.sort(function (a, b) {
+            if (a.textContent < b.textContent)
+                return -1;
+            if (a.textContent > b.textContent)
+                return 1;
+            return 0;
+            if (a.textContent == b.textContent)
+            return 0;
+        });
+        itemsArray.forEach(item => {
+            list.append(item);
+        });
+    });
+
+        console.log(itemsArray);
+
+
+
+
+/* function text () {
+    let newArray = []
+    itemsArray.innerText = newArray
+} */
+
+
+    
+        
+        
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 05</title>
+</head>
+
+<body>
+    <script>
+
+        let randomValue = Math.floor(Math.random() * 101);
+
+console.log(randomValue);
+
+let input = 0;
+
+let i = 0;
+
+let count = 0;
+
+
+
+while (randomValue !== input) {
+    count++
+    alert("try " + count)
+    let input = +prompt("Guess my number from 0 to 100");
+   
+ 
+if (isNaN(input)) {
+   alert("Write your number")
+}
+
+else if (randomValue > input) {
+    i++
+   alert("My number is more than " + input)
+   
+} else if (randomValue < input) {
+   i++
+   alert("My number is less than " + input)
+  
+  
+} else {
+   alert("You are right! My number is ", randomValue);
+   break
+}
+    }
+
+
+
+    </script>
+</body>
+
+</html>

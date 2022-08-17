@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        td,
+        th {
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="statsTable">
+        <tr>
+            <th>Month</th>
+            <th>Department 1</th>
+            <th>Department 2</th>
+        </tr>
+        <tr>
+            <td>Januaryь</td>
+            <td>50</td>
+            <td>120</td>
+        </tr>
+        <tr>
+            <td>February</td>
+            <td>60</td>
+            <td>140</td>
+        </tr>
+        <tr>
+            <td>March</td>
+            <td>125</td>
+            <td>115</td>
+        </tr>
+        <tr>
+            <td>April</td>
+            <td>87</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>March</td>
+            <td>95</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>June</td>
+            <td>115</td>
+            <td>90</td>
+        </tr>
+        <tr>
+            <td>July</td>
+            <td>125</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td id="output"></td>
+            <td id="output1"></td>
+        </tr>
+    </table>
+
+    <button onclick="foo();">Click Me</button>
+    <button onclick="foo2();">Click Me</button>
+
+    <div id="result"></div>
+
+    <script>
+
+
+        function foo() {
+
+            let table = document.querySelector("#statsTable");
+            let output = document.querySelector("#output");
+
+
+            let sum = 0;
+
+            let rowLength = table.rows[0].cells.length;
+
+            for (i = 1; i < table.rows.length; i++) {
+
+                const currentRow = table.rows[i];
+
+
+                const value = currentRow.cells[1].innerText;
+                
+                sum += Number(value);
+
+                console.log(sum);
+
+            }
+
+            output.innerHTML = sum;
+
+            let output1 = document.querySelector("#output1");
+            text();
+        }
+        function foo2() {
+
+let table = document.querySelector("#statsTable");
+let output = document.querySelector("#output1");
+
+
+let sum = 0;
+
+let rowLength = table.rows[0].cells.length;
+
+for (i = 1; i < table.rows.length; i++) {
+
+    const currentRow = table.rows[i];
+
+
+    const value = currentRow.cells[2].innerText;
+    
+    sum += Number(value);
+
+    console.log(sum);
+
+   
+
+}
+
+output.innerHTML = sum;
+
+let output1 = document.querySelector("#output1");
+text();
+}
+
+let result = document.querySelector("#result");
+let output = document.querySelector("#output");
+let output1 = document.querySelector("#output1");
+
+
+function text() {
+if (output > output1) {
+    result.innerHTML = 'Department 1 made more sales'
+} else if (output < output1) {
+    result.innerHTML = 'Department 2 made more sales'
+} else {
+result.innerHTML = ''
+} }
+
+
+    </script>
+</body>
+
+</html>
