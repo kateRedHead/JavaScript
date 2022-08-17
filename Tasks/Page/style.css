@@ -1,0 +1,153 @@
+body {
+    margin-top: 0;
+    font-family: 'Hurricane', cursive;
+    font-size: 20px;
+    color: #6c7279; 
+    background-color: #fff
+    -webkit-font-smoothing: antialiased;
+}
+
+*,
+*:before,
+*after {
+    box-sizing:border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+/* Container
+=================*/
+.container {
+  width: 100%;  
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+
+/* Header
+=================*/
+
+.header {
+width: 100%;
+height: 216.5px;
+position: absolute;
+top:0;
+left:0;
+z-index: 1000;
+}
+
+.header__inner {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 35px 0;
+    border-bottom: 1px solid #515369;
+}
+
+/* Nav
+=================*/
+
+.nav{
+    display: flex;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+   
+}
+
+    .nav__link{
+        margin-left: 50px;
+        color: #2b033d;
+        text-decoration: none;
+        opacity: 0.75;
+        transition: opacity .1s linear;
+
+    }
+
+    .nav__link:frist-child {
+margin-left:0
+    }
+
+    .nav__link:hover {
+        opacity: 1;
+        
+    }
+
+    /*intro
+    ===================*/
+
+ .intro {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+        height: 540px;
+        padding-top: 216.5px;
+
+        background: #e1cae7 url("img/fon.jpg") center no-repeat
+        ;
+        opacity: 0.75;
+        }
+
+
+.intro__inner {
+    width: 100%;
+    max-width: 970px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro__title {
+    margin: 0 0 30px;
+
+    font-family: 'Hurricane', cursive;
+    font-size: 65px;
+    line-height: 1.1;
+    color: #2b033d;
+    font-weight: 400;
+    text-align: center;
+
+}
+
+.intro__subtitle {
+   margin-bottom: 50px;
+   font-size: 22px;
+   color: #2b033d;
+   line-height: 1.5;
+   font-weight: 400;
+   text-align: center;
+}
+
+  /*Button
+    ===================*/
+.btn {
+display: inline-block;
+vertical-align: top;
+text-align: center;
+padding: 14px 40px;
+border-radius: 2px;
+border: 0;
+cursor: pointer;
+font-family: 'Hurricane', cursive;
+font-size: 13px;
+color: #e1cae7;
+font-weight: 400;
+text-transform: uppercase;
+text-decoration: none;
+transition: background .1s linear;
+
+    }
+
+.btnred {
+    background-color: #fd8ab1;
+    margin-left: 490px;
+}
+
+.btnred:hover {
+    background-color: #c92f63;
+}
